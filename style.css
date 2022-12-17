@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    color: #ffffff;
+    margin: 0;
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 0px 20px #242424;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1.5em;
+    height: 100vh;
+}
+div.top-display{
+    display: flex;
+    justify-content: space-between;
+}
+h1#time{
+    text-align: center;
+}
+div#crypto{
+    display: flex;
+    align-items: center;
+}
+.crypto-name{
+    margin-left: 0.4em;
+    font-size: 1.5em;
+}
