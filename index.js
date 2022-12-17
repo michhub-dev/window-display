@@ -19,3 +19,17 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
    })
 
 //fetch and change crypto name and image
+fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+   .then(res => {
+       if(!res.ok){
+        throw Error('Something is wrong with this request')
+       }
+       return res.json()
+   })
+   .then(data => {
+     document.getElementById('crypto').innerHTML = `
+       <img src=${data.image.small}/>
+       <span>${data.name}</span>
+     `
+   })
+   .catch(err => console.err(err))
