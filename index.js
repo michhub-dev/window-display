@@ -1,4 +1,4 @@
-//fetch and change window image and author name 
+//fetch and change window image and author name. Throw error if it's unfound  
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
    .then(res => {
      if(!res.ok){
@@ -11,6 +11,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     document.body.style.backgroundImage = `url(${data.urls.regular})`
     document.getElementById('author').textContent = `Author: ${data.user.name}`
    })
+   // display this image and author as default when error occurs in getting data
    .catch(Error => {
     document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1560008511-11c63416e52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDIxMTc&ixlib=rb-1.2.1&q=80&w=1080
     )`
@@ -28,7 +29,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
    })
    .then(data => {
      document.getElementById('crypto').innerHTML = `
-       <img src=${data.image.small}/>
+       <img src=${data.image.small} />
        <span class='crypto-name'>${data.name}</span>
      `
      document.getElementById('crypto-container').innerHTML += `
@@ -37,7 +38,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
        <p>⬇️24hrs low price: $${data.market_data.low_24h.usd}</P>
      `
    })
-   .catch(err => console.err(err))
+   .catch(error => console.error(err))
 // a function to display current time
    function getCurrentTime(){
     const date = new Date()
@@ -46,7 +47,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     `
    }
    setInterval(getCurrentTime, 1000)
-
+// get the current geographic location. If page is not found, throw errow
    navigator.geolocation.getCurrentPosition(position => {
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
       .then(res => {
@@ -54,9 +55,9 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
           throw Error("Something went wrong")
         }
         return res.json()
-      } )
+      } ) 
 
-      
+      //display the weather icon, temparature, & city. Catch error  
       .then(data => {
          const weatherIcon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
          document.getElementById('weather-container').innerHTML = `
@@ -82,4 +83,4 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
          <p class='quotes'>${data.activity}</p>
         `
       })
-      .catch(err => console.error(err))
+      .catch(error => console.error(err))
