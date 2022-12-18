@@ -58,5 +58,6 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
       .then(data => {
         console.log(data)
       })
+      .catch(err => console.error(err))
           
    })
