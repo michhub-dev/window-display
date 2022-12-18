@@ -34,3 +34,24 @@ div#crypto{
     margin-left: 0.4em;
     font-size: 1.5em;
 }
+div#weather-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-start;
+}
+.weather-icon{
+  
+}
+.weather-temp{
+  font-size: 1.7em;
+  margin: 0;
+  margin-left: -10px;
+}
+.city-name{
+    font-size: 1.6em;
+    margin-top: -1.5em;
+   text-align: right;
+   width: 100%;
+}
