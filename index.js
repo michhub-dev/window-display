@@ -60,7 +60,7 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
       .then(data => {
          const weatherIcon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
          document.getElementById('weather-container').innerHTML = `
-           <img src=${weatherIcon}/>
+           <img src=${weatherIcon} />
          `
          console.log(weatherIcon)
       })
