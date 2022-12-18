@@ -18,7 +18,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 
    })
 
-//fetch and display crypto name and image
+//fetch and display crypto name and image, and prices
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
    .then(res => {
        if(!res.ok){
@@ -30,6 +30,11 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
      document.getElementById('crypto').innerHTML = `
        <img src=${data.image.small}/>
        <span class='crypto-name'>${data.name}</span>
+     `
+     document.getElementById('crypto-container').innerHTML += `
+       <p>🎯Current price: $${data.market_data.current_price.usd}</P>
+       <p>⬆️24hrs high price: $${data.market_data.high_24h.usd}</P>
+       <p>⬇️24hrs low price: $${data.market_data.low_24h.usd}</P>
      `
    })
    .catch(err => console.err(err))
