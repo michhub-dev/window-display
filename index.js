@@ -20,7 +20,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
    })
 
 //fetch and display crypto name and image, and prices
-fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+fetch("http://localhost:3000/api/v3/coins/bitcoin")
     .then(res => {
         if (!res.ok) {
             throw Error("Something went wrong")

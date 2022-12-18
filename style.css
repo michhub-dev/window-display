@@ -66,3 +66,6 @@ div#bottom-display{
  justify-content: space-between;
  text-transform: capitalize;
 }
+.qoutes{
+    flex-wrap: wrap;
+}
