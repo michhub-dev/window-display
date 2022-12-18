@@ -61,3 +61,8 @@ h1#time{
 p#author{
     font-size: 1rem;
 }
+div#bottom-display{
+ display: flex;
+ justify-content: space-between;
+ text-transform: capitalize;
+}

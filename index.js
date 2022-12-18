@@ -7,7 +7,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
      return res.json()
    })
    .then(data => {
-    console.log(data)
+    
     document.body.style.backgroundImage = `url(${data.urls.regular})`
     document.getElementById('author').textContent = `Author: ${data.user.name}`
    })
@@ -19,7 +19,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
    })
 
 //fetch and display crypto name and image, and prices
-fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
    .then(res => {
        if(!res.ok){
         throw Error('Something is wrong with this request')
@@ -69,3 +69,17 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
       .catch(err => console.error(err))
           
    })
+   // fetch and display random qoutes
+   fetch("https://apis.scrimba.com/bored/api/activity")
+      .then(res => {
+         if(!res.ok){
+          throw Error("There's a bug")
+         }
+         return res.json()
+      })
+      .then(data => {
+        document.getElementById('bottom-display').innerHTML += `
+         <p class='quotes'>${data.activity}</p>
+        `
+      })
+      .catch(err => console.error(err))
