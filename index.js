@@ -20,14 +20,14 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
    })
 
 //fetch and display crypto name and image, and prices
-fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
-   .then(res => {
-       if(!res.ok){
-        throw Error('Something is wrong with this request')
-       }
-       return res.json()
-   })
-   .then(data => {
+fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+    .then(res => {
+        if (!res.ok) {
+            throw Error("Something went wrong")
+        }
+        return res.json()
+    })
+    .then(data => {
      document.getElementById('crypto').innerHTML = `
        <img src=${data.image.small} />
        <span class='crypto-name'>${data.name}</span>
@@ -38,7 +38,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
        <p>⬇️24hrs low price: $${data.market_data.low_24h.usd}</P>
      `
    })
-   .catch(error => console.error(err))
+   .catch(error => console.error(error))
 // a function to display current time
    function getCurrentTime(){
     const date = new Date()
