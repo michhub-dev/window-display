@@ -6,3 +6,6 @@
 * The window also fetches and displays random quotes from an API
 * Here is the link to the live site: [https://michy-window-display.netlify.app/](). You need to allow it access your location in order for it to display your current weather and city 
 * I added this to my chrome extension 
+
+## Here is the beautiful look of the window display on my current window: ![image](https://user-images.githubusercontent.com/57120467/208903281-8a43e319-d57c-4c95-ab64-6b678855538d.png)
+
