@@ -5,4 +5,4 @@
 * It fetches and change window images and the author's name from Unsplash API: [https://unsplash.com/developers]() 
 * The window also fetches and displays random quotes from an API
 * Here is the link to the live site: [https://michy-window-display.netlify.app/](). You need to allow it access your location in order for it to display your current weather and city 
-I added this to my chrome extension 
+* I added this to my chrome extension 
